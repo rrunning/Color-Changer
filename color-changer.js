@@ -3,6 +3,15 @@ var currentColor;
 
 peanut();
 
+var addNewColors = ["Orange", "Purple", "Blue", "Light Blue", "Forest Green", "Pink", "Brown"];
+
+for(var i=0; i < addNewColors.length; i++){
+	var addColorsElement = document.getElementById('optional-colors');
+	var additionalColors = document.createElement('option');
+	addColorsElement.appendChild(additionalColors);
+	additionalColors.innerHTML = addNewColors[i];
+	additionalColors.setAttribute("value", addNewColors[i]);
+}
 
 function peanut(){
 	var element = document.getElementById('color-buttons');
@@ -23,15 +32,6 @@ function colorChange(color) {
 	currentColor = color;
 }
 
-var addNewColors = ["Orange", "Purple", "Blue", "Light Blue", "Forest Green", "Pink", "Brown"];
-
-for(var i=0; i < addNewColors.length; i++){
-	var addColorsElement = document.getElementById('optional-colors');
-	var additionalColors = document.createElement('option');
-	addColorsElement.appendChild(additionalColors);
-	additionalColors.innerHTML = addNewColors[i];
-	additionalColors.setAttribute("value", addNewColors[i]);
-}
 
 function addButton(){
 	var colorValue = document.getElementById('optional-colors').value;
@@ -41,7 +41,7 @@ function addButton(){
 	}
 	if (colorButtons.indexOf(colorValue) < 0 && colorValue != "SelectOne") {
 		colorButtons.push(colorValue);
-	peanut();
+		peanut();
 	}
 }
 
